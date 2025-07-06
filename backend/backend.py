@@ -11,6 +11,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import requests
 import json
+from dotenv import load_dotenv
+import os
 
 # Setup
 logging.basicConfig(level=logging.INFO)
@@ -190,7 +192,7 @@ class QuestionGenerator:
 
 # Initialize with your Perplexity API key
 # Get your key from https://perplexity.ai/
-generator = QuestionGenerator(api_key="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")
+generator = QuestionGenerator(api_key=API_KEY)
 
 @app.post("/generate")
 async def generate(file: UploadFile = File(...), count: int = 5):
