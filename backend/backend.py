@@ -14,6 +14,8 @@ import json
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
+api_key = os.getenv("API_KEY")
 # Setup
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
